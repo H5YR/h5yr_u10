@@ -1,5 +1,4 @@
-﻿using h5yr.ViewComponents;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+﻿using Skybrud.Social.Mastodon.Models.CustomEmojis;
 
 namespace h5yr.Core.Extensions
 {

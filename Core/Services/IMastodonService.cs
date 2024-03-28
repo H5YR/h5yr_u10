@@ -8,7 +8,5 @@ namespace h5yr.Core.Services
         Task<List<MastodonStatus>> GetStatuses(int limit, string? startId = null);
         int GetPostCount();
 
-        Task<List<MastodonCustomEmoji>> GetCustomEmojis();
-
     }
 }

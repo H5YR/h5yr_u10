@@ -1,4 +1,5 @@
 ﻿@using Skybrud.Social.Mastodon.Models.Statuses
+@using h5yr.Core.Extensions
 @model List<MastodonStatus>
 
 
@@ -21,7 +22,7 @@
                     </a>
                 </div>
                 <div class="tweet__content">
-                    @Html.Raw(status.Content)
+                    @Html.Raw(status.Content.ReplaceCustomEmojis(status.Emojis))
                 </div>
             </div>
             <p></p>
