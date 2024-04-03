@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Skybrud.Social.Mastodon" Version="1.0.0-alpha002" />
+    <PackageReference Include="Skybrud.Social.Mastodon" Version="1.0.0-alpha005" />
     <PackageReference Include="TweetinviAPI" Version="5.0.4" />
     <PackageReference Include="Umbraco.Cms" Version="10.0.1" />
   </ItemGroup>
