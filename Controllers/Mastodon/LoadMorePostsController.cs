@@ -35,6 +35,8 @@ namespace h5yr.Controllers.Mastodon
             // If we're passed in a starting ID, always start a new session otherwise returning users would start loading halfway through
             var startingPostId = string.IsNullOrEmpty(startId) ? HttpContext.Request.Cookies[StartingPostId] : startId;
 
+            startingPostId = long.TryParse(startingPostId, out long parsedResult) ? parsedResult.ToString() : ""; // Extra id tamper check
+
             IReadOnlyList<MastodonStatus> posts = Array.Empty<MastodonStatus>();
 
             if (IsOffline)
