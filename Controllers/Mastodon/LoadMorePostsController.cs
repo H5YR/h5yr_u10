@@ -33,7 +33,7 @@ namespace h5yr.Controllers.Mastodon
         public async Task<IActionResult> GetPosts(string startId = "")
         {
             // If we're passed in a starting ID, always start a new session otherwise returning users would start loading halfway through
-            var startingPostId = string.IsNullOrEmpty(startId) ? HttpContext.Session.GetString(StartingPostId) : startId;
+            var startingPostId = string.IsNullOrEmpty(startId) ? HttpContext.Request.Cookies[StartingPostId] : startId;
 
             IReadOnlyList<MastodonStatus> posts = Array.Empty<MastodonStatus>();
 
@@ -59,7 +59,7 @@ namespace h5yr.Controllers.Mastodon
                 posts = await _mastodonService.GetStatuses(PageSize, startingPostId);
             }
 
-            HttpContext.Session.SetString(StartingPostId, posts.LastOrDefault()?.Id ?? "");
+            HttpContext.Response.Cookies.Append(StartingPostId, posts.LastOrDefault()?.Id ?? "");
 
             return View("Mastodon/LoadMorePosts", posts);
         }
