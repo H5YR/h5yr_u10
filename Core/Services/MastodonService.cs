@@ -21,7 +21,6 @@ namespace h5yr.Core.Services
         private const string FeedHashtag = "h5yr";
         private const string FeedCacheKey = "mastodonposts";
         private const int FeedCacheMinutes = 15;
-        private const string EmojiCacheKey = "mastodonemojis";
 
 
         public MastodonService(ILogger<MastodonService> logger, AppCaches appCaches, IPostCounterStore postCounterStore)
@@ -111,7 +110,7 @@ namespace h5yr.Core.Services
                 _postCounterStore.Save(postCounter);
             }
 
-            var newerPosts = latestPosts.Where(p => p.CreatedAt.DateTimeOffset.DateTime > postCounter.Date);
+            var newerPosts = latestPosts.Where(p => p.CreatedAt.DateTimeOffset.DateTime > postCounter.Date.AddMilliseconds(3)); // 3ms covers for SQL datetime rounding
             if (newerPosts.Any())
             {
                 // We have newer posts, so update the count
