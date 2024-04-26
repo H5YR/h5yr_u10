@@ -6,6 +6,8 @@ a[href$="/tags/UmbracoTees" i]::after{content: "👕"}
 a[href$="/tags/umbraCoffee" i]::after{content: "☕"}
 a[href$="/tags/notacult" i]::after{content: "🙅"}
 a[href$="/tags/codegarden" i]::after,a[href*="/tags/cg2" i]::after{content: "🦄"}
+a[href$="/tags/cgRumours" i]::after{ content: "🤫" }
+a[href$="/tags/theSecretStage" i]::after { content: "🧱" }
 a[href$="/tags/dotnet" i]::after{content: "🤖"}
 a[href$="/tags/csharp" i]::after{content: "🤖"}
 a[href$="/tags/Hacktoberfest" i]::after{content: "🎃"}
@@ -18,4 +20,7 @@ a[href$="/tags/codernails" i]::after{content: "💅🏻"}
 a[href*="/tags/df2" i]::after, a[href*="/tags/duug" i]::after{content: "🦁"}
 a[href$="/tags/umbukfest" i]::after{content: "✖️"}
 a[href$="/tags/" i][href*="SecretSanta" i]::after{content: "🧑‍🎄"}
-
+a[href$="/tags/Sustainability" i]::after { content: "🌍" }
+a[href$="/tags/umbfyi" i]::after { content: "🚀" }
+a[href$="/tags/Contentment" i]::after { content: "😌" }
+a[href$="/tags/bellissima" i]::after { content: "👌" }
